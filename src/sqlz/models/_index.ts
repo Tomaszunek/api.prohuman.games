@@ -11,13 +11,31 @@ import { NewsInstance, NewsAttributes } from './news'
 import { ProjectInstance, ProjectAttributes } from './project'
 import { ProductInstance, ProductAttributes } from './product'
 
+import { AbilityInstance, AbilityAttributes } from './ability'
+import { AbilityTagInstance, AbilityTagAttributes } from './abilityTag'
+
+import { CategoryInstance, CategoryAttributes } from './category'
+import { CategoryTagInstance, CategoryTagAttributes } from './categoryTag'
+
+import { SeoTagInstance, SeoTagAttributes } from './seotag'
+import { SeoTagTagInstance, SeoTagTagAttributes } from './seotagTag'
+
 
 interface DbConnection {
   Language: Sequelize.Model<LanguageInstance, LanguageAttributes>,
   AppUser: Sequelize.Model<AppUserInstance, AppUserAttributes>,
   News: Sequelize.Model<NewsInstance, NewsAttributes>
   Project: Sequelize.Model<ProjectInstance, ProjectAttributes>,
-  Product: Sequelize.Model<ProductInstance, ProductAttributes>
+  Product: Sequelize.Model<ProductInstance, ProductAttributes>,
+
+  Ability: Sequelize.Model<AbilityInstance, AbilityAttributes>,
+  AbilityTag: Sequelize.Model<AbilityTagInstance, AbilityTagAttributes>,
+
+  Category: Sequelize.Model<CategoryInstance, CategoryAttributes>,
+  CategoryTag: Sequelize.Model<CategoryTagInstance, CategoryTagAttributes>,
+
+  SeoTag: Sequelize.Model<SeoTagInstance, SeoTagAttributes>,
+  SeoTagTag: Sequelize.Model<SeoTagTagInstance, SeoTagTagAttributes>
 
 
 }
