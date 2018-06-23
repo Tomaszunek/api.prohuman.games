@@ -5,6 +5,12 @@ import * as AppUserRoutes from './appusers'
 import * as NewsRoutes from './news'
 import * as ProjectRoutes from './projects'
 import * as ProductRoutes from './products'
+import * as AbilityRoutes from './abilities'
+import * as AbilityTagRoutes from './abilitiesTags'
+import * as CategoryRoutes from './categories'
+import * as CategoryTagRoutes from './categoriesTags'
+import * as SeoTagRoutes from './seoTags'
+import * as SeoTagTagsRoutes from './seoTagTags'
 
 export function initRoutes(app: Express) {
   winston.log('info', '--> Initialisations des routes')
@@ -18,6 +24,12 @@ export function initRoutes(app: Express) {
   NewsRoutes.routes(app)
   ProjectRoutes.routes(app)
   ProductRoutes.routes(app)
+  AbilityRoutes.routes(app)
+  AbilityTagRoutes.routes(app)
+  CategoryRoutes.routes(app)
+  CategoryTagRoutes.routes(app)
+  SeoTagRoutes.routes(app)
+  SeoTagTagsRoutes.routes(app)
 
 
   app.all('*', (req: Request, res: Response) => res.boom.notFound())
