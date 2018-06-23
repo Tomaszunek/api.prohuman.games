@@ -8,11 +8,15 @@ const config = require('../config/config.json')
 import { LanguageInstance, LanguageAttributes } from './language'
 import { AppUserInstance, AppUserAttributes } from './appuser'
 import { NewsInstance, NewsAttributes } from './news'
+import { ProjectInstance, ProjectAttributes } from './project'
+
 
 interface DbConnection {
   Language: Sequelize.Model<LanguageInstance, LanguageAttributes>,
   AppUser: Sequelize.Model<AppUserInstance, AppUserAttributes>,
   News: Sequelize.Model<NewsInstance, NewsAttributes>
+  Project: Sequelize.Model<ProjectInstance, ProjectAttributes>
+
 }
 let db = {}
 
