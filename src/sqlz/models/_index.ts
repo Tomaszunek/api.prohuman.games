@@ -7,10 +7,12 @@ const config = require('../config/config.json')
 // Import model specification from its own definition file.
 import { LanguageInstance, LanguageAttributes } from './language'
 import { AppUserInstance, AppUserAttributes } from './appuser'
+import { ProjectInstance, ProjectAttributes } from './project'
 
 interface DbConnection {
   Language: Sequelize.Model<LanguageInstance, LanguageAttributes>,
-  AppUser: Sequelize.Model<AppUserInstance, AppUserAttributes>
+  AppUser: Sequelize.Model<AppUserInstance, AppUserAttributes>,
+  Project: Sequelize.Model<ProjectInstance, ProjectAttributes>
 }
 let db = {}
 
