@@ -3,6 +3,7 @@ import * as AppUserDao from './appusers'
 import * as ProjectDao from './projects'
 import * as NewsDao from './news'
 import * as ProductsDao from './products'
+import * as TemplateContentDao from './templateContent'
 
 import * as AbilityDao from './ability'
 import * as AbilityTagDao from './abilityTag'
@@ -16,6 +17,7 @@ export { AppUserDao }
 export { ProjectDao }
 export { NewsDao }
 export { ProductsDao }
+export { TemplateContentDao }
 
 export { AbilityDao }
 export { AbilityTagDao }
