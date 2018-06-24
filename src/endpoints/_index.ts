@@ -9,6 +9,7 @@ import * as CategoriesController from './categories/_index'
 import * as CategoriesTagsController from './categoriesTags/_index'
 import * as SeoTagsController from './seotags/_index'
 import * as SeoTagTagsController from './seotagtags/_index'
+import * as TemplateContentController from './templateContent/_index'
 
 export {
   LanguageController,
@@ -16,6 +17,7 @@ export {
   ProjectController,
   NewsController,
   ProductsController,
+  TemplateContentController,
   AbilitiesController,
   AbilitiesTagsController,
   CategoriesController,

@@ -10,6 +10,7 @@ import { AppUserInstance, AppUserAttributes } from './appuser'
 import { NewsInstance, NewsAttributes } from './news'
 import { ProjectInstance, ProjectAttributes } from './project'
 import { ProductInstance, ProductAttributes } from './product'
+import { TemplateContentInstance, TemplateContentAttributes } from './templateContent'
 
 import { AbilityInstance, AbilityAttributes } from './ability'
 import { AbilityTagInstance, AbilityTagAttributes } from './abilityTag'
@@ -21,12 +22,14 @@ import { SeoTagInstance, SeoTagAttributes } from './seotag'
 import { SeoTagTagInstance, SeoTagTagAttributes } from './seotagTag'
 
 
+
 interface DbConnection {
   Language: Sequelize.Model<LanguageInstance, LanguageAttributes>,
   AppUser: Sequelize.Model<AppUserInstance, AppUserAttributes>,
   News: Sequelize.Model<NewsInstance, NewsAttributes>
   Project: Sequelize.Model<ProjectInstance, ProjectAttributes>,
   Product: Sequelize.Model<ProductInstance, ProductAttributes>,
+  TemplateContent: Sequelize.Model<TemplateContentInstance, TemplateContentAttributes>,
 
   Ability: Sequelize.Model<AbilityInstance, AbilityAttributes>,
   AbilityTag: Sequelize.Model<AbilityTagInstance, AbilityTagAttributes>,

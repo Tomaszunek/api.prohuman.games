@@ -11,6 +11,7 @@ import * as CategoryRoutes from './categories'
 import * as CategoryTagRoutes from './categoriesTags'
 import * as SeoTagRoutes from './seoTags'
 import * as SeoTagTagsRoutes from './seoTagTags'
+import * as TemplateContentRoutes from './templateContent'
 
 export function initRoutes(app: Express) {
   winston.log('info', '--> Initialisations des routes')
@@ -24,6 +25,7 @@ export function initRoutes(app: Express) {
   NewsRoutes.routes(app)
   ProjectRoutes.routes(app)
   ProductRoutes.routes(app)
+  TemplateContentRoutes.routes(app)
   AbilityRoutes.routes(app)
   AbilityTagRoutes.routes(app)
   CategoryRoutes.routes(app)
