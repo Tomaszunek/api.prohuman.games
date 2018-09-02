@@ -22,3 +22,20 @@ export function findAll(): Promise<any> {
   return db.Project
     .findAll({ include: [{ all: true }] })
 }
+
+
+export function findAllMainPage(): Promise<any> {
+  return db.Project
+    .findAll({
+      include: [
+        {
+          model: db.CategoryTag,
+          where: { itemType: 'project' },
+          required: false,
+          include: [
+            { model: db.Category }
+          ]
+        }
+      ]
+    })
+}

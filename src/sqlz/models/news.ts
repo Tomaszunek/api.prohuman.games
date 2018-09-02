@@ -2,8 +2,9 @@ import * as Sequelize from 'sequelize'
 
 export interface NewsAttributes {
   id?: string
-  label?: string
+  name?: string
   text?: string
+  imagePath?: string
 }
 
 export interface NewsInstance extends Sequelize.Instance<NewsAttributes> {
@@ -11,18 +12,22 @@ export interface NewsInstance extends Sequelize.Instance<NewsAttributes> {
   createdAt: Date
   updatedAt: Date
 
-  label: string
+  name: string
   text: string
+  imagePath: string
 }
 
 export default function defineNews(sequelize: Sequelize.Sequelize, DataTypes) {
   const News = sequelize.define('News', {
-    label: DataTypes.STRING(255),
-    text: DataTypes.STRING(50)
+    name: DataTypes.STRING(255),
+    text: DataTypes.STRING(50),
+    imagePath: DataTypes.STRING(150),
   }, {
       classMethods: {
         associate: function(models) {
-
+          News.hasMany(models.CategoryTag, {
+            foreignKey: 'itemId'
+          })
         }
       }
     })

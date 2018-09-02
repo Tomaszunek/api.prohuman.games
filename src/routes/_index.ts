@@ -12,6 +12,7 @@ import * as CategoryTagRoutes from './categoriesTags'
 import * as SeoTagRoutes from './seoTags'
 import * as SeoTagTagsRoutes from './seoTagTags'
 import * as TemplateContentRoutes from './templateContent'
+import * as PageContent from './pageContent'
 
 export function initRoutes(app: Express) {
   winston.log('info', '--> Initialisations des routes')
@@ -32,6 +33,7 @@ export function initRoutes(app: Express) {
   CategoryTagRoutes.routes(app)
   SeoTagRoutes.routes(app)
   SeoTagTagsRoutes.routes(app)
+  PageContent.routes(app)
 
 
   app.all('*', (req: Request, res: Response) => res.boom.notFound())

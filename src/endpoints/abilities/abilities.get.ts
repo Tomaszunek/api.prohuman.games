@@ -7,3 +7,10 @@ export function list(req: Request, res: Response) {
     .then(abilities => res.status(200).send(abilities))
     .catch(error => res.boom.badRequest(error))
 }
+
+export function app(req: Request, res: Response) {
+  return AbilityDao
+    .findAll()
+    .then(abilities => res.status(200).send(abilities))
+    .catch(error => res.boom.badRequest(error))
+}

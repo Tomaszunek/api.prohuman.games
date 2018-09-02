@@ -8,3 +8,18 @@ export function findAll(): Promise<any> {
     .findAll({ include: [{ all: true }] })
 }
 
+export function findAllMainPage(): Promise<any> {
+  return db.Product
+    .findAll({
+      include: [
+        {
+          model: db.CategoryTag,
+          where: { itemType: 'product' },
+          required: false,
+          include: [
+            { model: db.Category }
+          ]
+        }
+      ]
+    })
+}

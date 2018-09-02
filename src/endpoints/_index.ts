@@ -10,7 +10,7 @@ import * as CategoriesTagsController from './categoriesTags/_index'
 import * as SeoTagsController from './seotags/_index'
 import * as SeoTagTagsController from './seotagtags/_index'
 import * as TemplateContentController from './templateContent/_index'
-
+import * as PageContentController from './PageContent/_index'
 export {
   LanguageController,
   AppUserController,
@@ -23,6 +23,7 @@ export {
   CategoriesController,
   CategoriesTagsController,
   SeoTagsController,
-  SeoTagTagsController
+  SeoTagTagsController,
+  PageContentController
 }
 

@@ -2,8 +2,9 @@ import * as Sequelize from 'sequelize'
 
 export interface CategoryTagAttributes {
   id?: string
-  label?: string
-  text?: string
+  categoryId?: Int32Array
+  itemId?: Int32Array
+  itemType?: string
 }
 
 export interface CategoryTagInstance extends Sequelize.Instance<CategoryTagAttributes> {
@@ -11,18 +12,31 @@ export interface CategoryTagInstance extends Sequelize.Instance<CategoryTagAttri
   createdAt: Date
   updatedAt: Date
 
-  label: string
-  text: string
+  categoryId: Int32Array
+  itemId: Int32Array
+  itemType: string
 }
 
 export default function defineCategoryTag(sequelize: Sequelize.Sequelize, DataTypes) {
   const CategoryTag = sequelize.define('CategoryTag', {
-    label: DataTypes.STRING(255),
-    text: DataTypes.STRING(50)
+    categoryId: DataTypes.INTEGER,
+    itemId: DataTypes.INTEGER,
+    itemType: DataTypes.STRING(50)
   }, {
       classMethods: {
         associate: function(models) {
-
+          CategoryTag.belongsTo(models.Category, {
+            foreignKey: 'categoryId'
+          })
+          CategoryTag.belongsTo(models.News, {
+            foreignKey: 'itemId'
+          })
+          CategoryTag.belongsTo(models.Product, {
+            foreignKey: 'itemId'
+          })
+          CategoryTag.belongsTo(models.Project, {
+            foreignKey: 'itemId'
+          })
         }
       }
     })
